@@ -45,15 +45,18 @@
             this.tableLayoutPanel4 = new System.Windows.Forms.TableLayoutPanel();
             this.button1 = new System.Windows.Forms.Button();
             this.button2 = new System.Windows.Forms.Button();
+            this.tableLayoutPanel5 = new System.Windows.Forms.TableLayoutPanel();
             this.subjects = new System.Windows.Forms.DataGridView();
-            this.statusBar = new System.Windows.Forms.Label();
             this.Subject = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.SubjectName = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Export = new System.Windows.Forms.Button();
+            this.statusBar = new System.Windows.Forms.Label();
             this.tableLayoutPanel1.SuspendLayout();
             this.tableLayoutPanel2.SuspendLayout();
             this.tableLayoutPanel3.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.timeTable)).BeginInit();
             this.tableLayoutPanel4.SuspendLayout();
+            this.tableLayoutPanel5.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.subjects)).BeginInit();
             this.SuspendLayout();
             // 
@@ -67,8 +70,8 @@
             this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 30F));
             this.tableLayoutPanel1.Controls.Add(this.tableLayoutPanel2, 0, 0);
             this.tableLayoutPanel1.Controls.Add(this.generate, 1, 0);
-            this.tableLayoutPanel1.Controls.Add(this.subjects, 1, 1);
             this.tableLayoutPanel1.Controls.Add(this.tableLayoutPanel3, 0, 1);
+            this.tableLayoutPanel1.Controls.Add(this.tableLayoutPanel5, 1, 1);
             this.tableLayoutPanel1.Location = new System.Drawing.Point(12, 12);
             this.tableLayoutPanel1.Name = "tableLayoutPanel1";
             this.tableLayoutPanel1.RowCount = 2;
@@ -177,6 +180,8 @@
             this.T6,
             this.T7,
             this.T8});
+            this.timeTable.EditMode = System.Windows.Forms.DataGridViewEditMode.EditProgrammatically;
+            this.timeTable.Enabled = false;
             this.timeTable.Location = new System.Drawing.Point(3, 3);
             this.timeTable.Name = "timeTable";
             this.timeTable.ReadOnly = true;
@@ -275,6 +280,23 @@
             this.button2.UseVisualStyleBackColor = true;
             this.button2.Click += new System.EventHandler(this.button2_Click);
             // 
+            // tableLayoutPanel5
+            // 
+            this.tableLayoutPanel5.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.tableLayoutPanel5.ColumnCount = 1;
+            this.tableLayoutPanel5.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 100F));
+            this.tableLayoutPanel5.Controls.Add(this.subjects, 0, 0);
+            this.tableLayoutPanel5.Controls.Add(this.Export, 0, 1);
+            this.tableLayoutPanel5.Location = new System.Drawing.Point(658, 53);
+            this.tableLayoutPanel5.Name = "tableLayoutPanel5";
+            this.tableLayoutPanel5.RowCount = 2;
+            this.tableLayoutPanel5.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 90F));
+            this.tableLayoutPanel5.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 10F));
+            this.tableLayoutPanel5.Size = new System.Drawing.Size(276, 405);
+            this.tableLayoutPanel5.TabIndex = 5;
+            // 
             // subjects
             // 
             this.subjects.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
@@ -286,22 +308,12 @@
             this.Subject,
             this.SubjectName});
             this.subjects.Enabled = false;
-            this.subjects.Location = new System.Drawing.Point(658, 53);
+            this.subjects.Location = new System.Drawing.Point(3, 3);
             this.subjects.Name = "subjects";
-            this.subjects.Size = new System.Drawing.Size(276, 405);
+            this.subjects.Size = new System.Drawing.Size(270, 358);
             this.subjects.TabIndex = 3;
             this.subjects.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.subjects_CellContentClick);
             this.subjects.CellValueChanged += new System.Windows.Forms.DataGridViewCellEventHandler(this.subjects_CellValueChanged);
-            // 
-            // statusBar
-            // 
-            this.statusBar.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
-            this.statusBar.AutoSize = true;
-            this.statusBar.Location = new System.Drawing.Point(12, 476);
-            this.statusBar.Name = "statusBar";
-            this.statusBar.Size = new System.Drawing.Size(45, 13);
-            this.statusBar.TabIndex = 1;
-            this.statusBar.Text = "Debug: ";
             // 
             // Subject
             // 
@@ -317,6 +329,29 @@
             this.SubjectName.HeaderText = "Tên học phần";
             this.SubjectName.Name = "SubjectName";
             this.SubjectName.ReadOnly = true;
+            // 
+            // Export
+            // 
+            this.Export.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.Export.Location = new System.Drawing.Point(3, 367);
+            this.Export.Name = "Export";
+            this.Export.Size = new System.Drawing.Size(270, 35);
+            this.Export.TabIndex = 4;
+            this.Export.Text = "Xuất Excel";
+            this.Export.UseVisualStyleBackColor = true;
+            this.Export.Click += new System.EventHandler(this.Export_Click);
+            // 
+            // statusBar
+            // 
+            this.statusBar.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
+            this.statusBar.AutoSize = true;
+            this.statusBar.Location = new System.Drawing.Point(12, 476);
+            this.statusBar.Name = "statusBar";
+            this.statusBar.Size = new System.Drawing.Size(45, 13);
+            this.statusBar.TabIndex = 1;
+            this.statusBar.Text = "Debug: ";
             // 
             // Form1
             // 
@@ -334,6 +369,7 @@
             this.tableLayoutPanel3.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.timeTable)).EndInit();
             this.tableLayoutPanel4.ResumeLayout(false);
+            this.tableLayoutPanel5.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.subjects)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
@@ -363,6 +399,8 @@
         private System.Windows.Forms.Button button2;
         private System.Windows.Forms.DataGridViewTextBoxColumn Subject;
         private System.Windows.Forms.DataGridViewTextBoxColumn SubjectName;
+        private System.Windows.Forms.TableLayoutPanel tableLayoutPanel5;
+        private System.Windows.Forms.Button Export;
     }
 }
 

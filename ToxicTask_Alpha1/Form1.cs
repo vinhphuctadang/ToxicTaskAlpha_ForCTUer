@@ -456,6 +456,12 @@ namespace ToxicTask_Alpha1
             if (e.ColumnIndex == 0)
                 onPlanInput(sender, e);
         }
+
+        
+        private void Export_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 
     public class Range
